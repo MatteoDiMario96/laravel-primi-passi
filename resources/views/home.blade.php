@@ -27,10 +27,21 @@
                 Nome: {{ $user['name'] }}
                 Cognome: {{ $user['surname']}}
                 Età: {{ $user['age'] }}
-                Stato Civile: @if ($user['isMarried'] === true)
+                Sesso:
+                @if ($user['gender'] === 'M')
+                    Uomo
+                @elseif ($user['gender'] === 'F')
+                    Donna
+                @endif
+                Stato Civile:
+                @if ($user['isMarried'] === true && $user['gender'] === 'M')
                     Sposato
-                @else
+                @elseif ($user['isMarried'] === true && $user['gender'] === 'F')
+                    Sposata
+                @elseif ($user['isMarried'] === false && $user['gender'] === 'M')
                     Celibe
+                @elseif ($user['isMarried'] === false && $user['gender'] === 'F')
+                    Nubile
                 @endif
             </li>
             @endforeach

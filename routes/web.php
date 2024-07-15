@@ -19,11 +19,13 @@ Route::get('/', function () {
         'name' => 'Matteo',
         'surname' => 'Di Mario',
         'age' => 27,
+        'gender' => 'M',
         'isMarried' => false,
         ],[
         'name' => 'Sara',
         'surname' => 'Lengu',
         'age' => 21,
+        'gender' => 'F',
         'isMarried' => false,
         ]];
     return view('home', ['data' => $data]);
