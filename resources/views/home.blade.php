@@ -8,7 +8,9 @@
 </head>
 <body>
     <header>
-        Benvenut*
+        <h1>
+            Benvenut*
+        </h1>
     </header>
     <main>
         <h2>
@@ -20,22 +22,18 @@
         </h1>
 
         <ul>
+            @foreach ($data as $user )
             <li>
-                {{ $name }}
-            </li>
-            <li>
-                {{ $surname }}
-            </li>
-            <li>
-                {{ $age }}
-            </li>
-            <li>
-                @if ($isMarried === true)
+                Nome: {{ $user['name'] }}
+                Cognome: {{ $user['surname']}}
+                Età: {{ $user['age'] }}
+                Stato Civile: @if ($user['isMarried'] === true)
                     Sposato
                 @else
-                    Non sposato
+                    Celibe
                 @endif
             </li>
+            @endforeach
         </ul>
     </main>
     <footer>

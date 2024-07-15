@@ -15,12 +15,18 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
     $data = [
+        [
         'name' => 'Matteo',
         'surname' => 'Di Mario',
         'age' => 27,
-        'isMarried' => false
-    ];
-    return view('home', $data);
+        'isMarried' => false,
+        ],[
+        'name' => 'Sara',
+        'surname' => 'Lengu',
+        'age' => 21,
+        'isMarried' => false,
+        ]];
+    return view('home', ['data' => $data]);
 });
 
 Route::get('/about-us', function () {
